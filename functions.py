@@ -18,7 +18,7 @@ DICT = { 'A':'.-', 'B':'-...',
 def encrypt(msg):
   moar=""
   for let in msg:
-    if(let not in DICT):
+    if(let not in DICT and let !=" " ):
       return("invalid input")
 
     if(let!=" "):
@@ -41,7 +41,7 @@ def decrypt(moar):
         msg+=" "
       else:
         lis=list(DICT.values())
-        if( temp not in lis):
+        if( temp not in lis ):
           return("invalid input")
         else:
           msg += list(DICT.keys())[list(DICT.values()).index(temp)]
